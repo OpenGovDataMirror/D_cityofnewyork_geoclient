@@ -1,0 +1,24 @@
+plugins {
+    id 'groovy'
+    id 'groovy-gradle-plugin'
+    id 'java-gradle-plugin'
+}
+
+repositories {
+    gradlePluginPortal()
+}
+
+gradlePlugin {
+    plugins {
+        geosupportIntegrationTestPlugin {
+            id = 'gov.nyc.doitt.gis.geoclient.gradle.integration-test'
+            implementationClass = 'gov.nyc.doitt.gis.geoclient.gradle.IntegrationTestPlugin'
+        }
+    }
+}
+
+dependencies {
+    compileOnly gradleApi()
+    implementation 'com.diffplug.spotless:spotless-plugin-gradle:6.2.1'
+    implementation 'com.github.ben-manes:gradle-versions-plugin:0.42.0'
+}
